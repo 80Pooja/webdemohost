@@ -1,10 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Example') {
-            steps {
-                echo 'Hello World'
-            }
-        }
+         stage{ label 'slave1' }
+        stages {
+            stage('Example') {
+             steps {
+                 echo 'Hello World'
+             }
+         }
     }
 }
