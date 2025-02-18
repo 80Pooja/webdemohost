@@ -14,7 +14,7 @@ pipeline {
                     }
            } stage('deploy') {
                     steps {
-                            sh "sudo cp target/*.war https://github.com/80Pooja/webdemohost.git"
+                            sh "sudo cp target/*.war /opt/apache-tomcat-10.1.34/webapps"
                     }
            }
     }
