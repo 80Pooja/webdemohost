@@ -8,14 +8,5 @@ pipeline {
                            sh "cd webdemohost"
                     }
            }
-                  stage('build') {
-                    steps {
-                            sh "mvn clean package"
-                    }
-           } stage('deploy') {
-                    steps {
-                            sh "sudo cp target/*.war /opt/apache-tomcat-10.1.34/webapps"
-                    }
-           }
     }
 }
