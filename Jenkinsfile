@@ -22,13 +22,13 @@ pipeline {
                                    //echo "installing java 17"
                                    //sh "sudo apt update"
                                    //sh "sudo apt install -y openjdk-17-jdk"
-                                   setupjavagroovy()
+                                   setupjava()
                           }
                  }
           stage('build') {
                     steps {
                           // sh "mvn clean package"
-                           builtprojectgroovy()
+                           builtproject()
                     }
            }
            stage('deploy') {
