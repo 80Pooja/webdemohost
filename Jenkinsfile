@@ -26,7 +26,7 @@ pipeline {
                                    setupjava('openjdk-17-jdk')
                           }
                  }
-                 stage('setupmaven')
+                 stage('setupmaven') {
                  steps {
                          // echo "installing maveen "
                           //sh "sudo apt install -y maven"
