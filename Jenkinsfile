@@ -16,9 +16,19 @@ pipeline {
                            checkoutcode()  
                     }
            }
+                 stage('setupjava17') {
+                          steps {
+                                   //sh "whoami"
+                                   //echo "installing java 17"
+                                   //sh "sudo apt update"
+                                   //sh "sudo apt install -y openjdk-17-jdk"
+                                   setupjavagroovy()
+                          }
+                 }
           stage('build') {
                     steps {
-                          sh "mvn clean package"
+                          // sh "mvn clean package"
+                           builtprojectgroovy()
                     }
            }
            stage('deploy') {
