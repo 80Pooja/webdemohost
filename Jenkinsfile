@@ -1,4 +1,4 @@
-@Library('java_demo_pipeline@main') -
+@Library('java_demo_pipeline@main') _
          
 pipeline {
          agent { label 'slave4' }
