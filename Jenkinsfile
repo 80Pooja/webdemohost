@@ -13,7 +13,7 @@ pipeline {
                      // sh "rm -rf webdemohost"
                       // sh "git clone https://github.com/80Pooja/webdemohost.git"
                        // sh "cd webdemohost"
-                           checkoutcode.groovy()  
+                           checkoutcode()  
                     }
            }
           stage('build') {
