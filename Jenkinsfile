@@ -16,6 +16,7 @@ pipeline {
                            checkoutcode()  
                     }
            }
+                 
                  stage('setupjava17') {
                           steps {
                                    //sh "whoami"
@@ -25,6 +26,13 @@ pipeline {
                                    setupjava('openjdk-17-jdk')
                           }
                  }
+                 stage('setupmaven')
+                 steps {
+                         // echo "installing maveen "
+                          //sh "sudo apt install -y maven"
+                          setupjava('maven')
+                 }
+        }
           stage('build') {
                     steps {
                           // sh "mvn clean package"
