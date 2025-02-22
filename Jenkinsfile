@@ -47,12 +47,16 @@ pipeline {
            }
                    stage('downlolad') {
                           steps {
-  sh 'curl -L -u "${{JFROGUSERNAME}}:${{JFROGTOKEN}}" -O "https://trialeddz4v.jfrog.io/artifactory/hello-world-war-libs-release/com/efsavage/hello-world-war/1.0.0/hello-world-war-1.0.0.war"'
-                          }
+ //curl -L -u "${JFROGUSERNAME}:${JFROGTOKEN}" -O "https://trialeddz4v.jfrog.io/artifactory/hello-world-war-libs-release/com/efsavage/hello-world-war/1.0.0/hello-world-war-1.0.0.war"
+   withCredentials([string(credentialsId: 'jfrog_token', variable: 'JFROG_API_TOKEN')]) {
+                        sh """
+                        curl -L -u "poodevagirikar@gmail.com:\${JFROG_API_TOKEN}" -O "https://trialeddz4v.jfrog.io/artifactory/hello-world-war-libs-release/com/efsavage/hello-world-war/1.0.0/hello-world-war-1.0.0.war"
+                        """                       }
+                   }
                    }
            stage('deploy') {
                     steps {
-                          sh "sudo cp target/*.war /opt/apache-tomcat-10.1.34/webapps"
+                          sh "sudo cp hello-world-war-1.0.0.war/opt/apache-tomcat-10.1.34/webapps"
                     }
            }
     }
