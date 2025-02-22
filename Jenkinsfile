@@ -39,6 +39,12 @@ pipeline {
                            builtproject()
                     }
            }
+                 stage('publish') {
+                    steps {
+                           sh "mvn clean deploy"
+                          // builtproject()
+                    }
+           }
            stage('deploy') {
                     steps {
                           sh "sudo cp target/*.war /opt/apache-tomcat-10.1.34/webapps"
