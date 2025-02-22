@@ -45,9 +45,9 @@ pipeline {
                           // builtproject()
                     }
            }
-                   stage('downlolad'){
+                   stage('downlolad') {
                           steps {
-  sh curl -L -u "${{JFROGUSERNAME}}:${{JFROGTOKEN}}" -O "https://trialeddz4v.jfrog.io/artifactory/hello-world-war-libs-release/com/efsavage/hello-world-war/1.0.0/hello-world-war-1.0.0.war"
+  sh 'curl -L -u "${{JFROGUSERNAME}}:${{JFROGTOKEN}}" -O "https://trialeddz4v.jfrog.io/artifactory/hello-world-war-libs-release/com/efsavage/hello-world-war/1.0.0/hello-world-war-1.0.0.war"'
                           }
                    }
            stage('deploy') {
